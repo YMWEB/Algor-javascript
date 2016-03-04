@@ -1,15 +1,13 @@
-function searchValue(root,value){
-	if(root == null) return;
-	if(root.value == value){	
-		console.log(value);
-	}
-	else{
-		searchValue(root.left,value);
-		searchValue(root.right,value);
+function getHeight(root){
+	if(root==null){ 
+		return 0
+	}else{
+		return Math.max(getHeight(root.left),getHeight(root.right))+1;
+
 	}
 }
 
-/* Test 
+/*Test
 function Node(value){
 	this.value = value;
 	this.left = null;
@@ -26,5 +24,5 @@ function buildTree(){
 	return root;
 };
 var root = buildTree();
+getHeight(root) //4
 */
-//searchValue(root,'2');
